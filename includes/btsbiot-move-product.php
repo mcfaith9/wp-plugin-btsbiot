@@ -18,7 +18,7 @@ function bulk_action_move_product( $bulk_array ) {
 		'site__not_in' => get_current_blog_id(), // excluding current blog
 		'number' => 10,))) {
 		foreach( $sites as $site ) {
-			$bulk_array['move_to_'.$site->blog_id] = 'Mcfloat Copy Post to &quot;' .$site->blogname . '&quot;';
+			$bulk_array['move_to_'.$site->blog_id] = 'Moved/Copy Product to &quot;' .$site->blogname . '&quot;';
 		}
 	}
 	return $bulk_array;

@@ -17,7 +17,7 @@ function mcfaith_post_bulk_action_multisite( $bulk_array ) {
 		'site__not_in' => get_current_blog_id(),
 		'number' => 10,))) {
 		foreach( $sites as $site ) {
-			$bulk_array['move_to_'.$site->blog_id] = 'Copy post to &quot;' .$site->blogname . '&quot;';
+			$bulk_array['move_to_'.$site->blog_id] = 'Copy Post to &quot;' .$site->blogname . '&quot;';
 		}
 	}
 	return $bulk_array;
@@ -68,6 +68,7 @@ function bulk_post_action_multisite_handler( $redirect, $doaction, $object_ids )
 	}
 	return $redirect;
 }
+
 add_action( 'admin_notices', 'bulk_move_post_multisite_notices' );
 
 function bulk_move_post_multisite_notices() {
