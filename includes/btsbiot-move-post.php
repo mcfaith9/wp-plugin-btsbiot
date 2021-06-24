@@ -37,17 +37,17 @@ function bulk_post_action_multisite_handler( $redirect, $doaction, $object_ids )
 			$post['ID'] = '';
 
 			switch_to_blog( $blog_id );
-			$inserted_post_id = wp_insert_post($post); // insert the post
-			foreach($meta as $key => $value) {
-			 	update_post_meta($inserted_post_id,$key,$value[0]);
+			// $inserted_post_id = wp_insert_post($post); // insert the post
+			// foreach($meta as $key => $value) {
+			//  	update_post_meta($inserted_post_id,$key,$value[0]);
+			// }
+			$inserted_post_id = wp_insert_post($post);
+			foreach ( $taxonomies as $taxonomy ) {
+				$post_terms = wp_get_object_terms( $post_id, $taxonomy, array('fields' => 'slugs') );
 			}
-			// $inserted_post_id = wp_insert_post($post);
-			// foreach ( $taxonomies as $taxonomy ) {
-			// 	$post_terms = wp_get_object_terms( $post_id, $taxonomy, array('fields' => 'slugs') );
-			// }
-			// foreach ( $taxonomies as $taxonomy ) {
-			// 	wp_set_object_terms( $inserted_post_id, $post_terms, $taxonomy, false );
-			// }
+			foreach ( $taxonomies as $taxonomy ) {
+				wp_set_object_terms( $inserted_post_id, $post_terms, $taxonomy, false );
+			}
 			foreach ( $data as $key => $values) {
 				if( $key == '_wp_old_slug' ) {
 					continue;

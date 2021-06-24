@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              aguyiknow.com.au
- * @since             1.0.1
+ * @since             1.0.2
  * @package           Btsbiot
  *
  * @wordpress-plugin
  * Plugin Name:       BTSBIOT by Mcfaith
  * Plugin URI:        http://www.aguyiknow.com.au
- * Description: Custome plugins dedicated for Sync/Copy products, post and pages. etc.
- * Version:           1.0.1
+ * Description: This plugins dedicated for Sync/Copy products, post and pages. Add Centralize Tags and TAXONOMIES.
+ * Version:           1.0.2
  * Author:            Mcfaith 
  * Author URI:        https://www.facebook.com/mcfaith
  * License:           GPL-2.0+
@@ -37,7 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'BTSBIOT_VERSION', '1.0.1' );
+define( 'BTSBIOT_VERSION', '1.0.2' );
 
 /**
  * The code that runs during plugin activation.
@@ -69,6 +69,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-btsbiot.php';
 require plugin_dir_path( __FILE__ ) . 'includes/btsbiot-move-post.php';
 require plugin_dir_path( __FILE__ ) . 'includes/btsbiot-move-product.php';
 require plugin_dir_path( __FILE__ ) . 'includes/btsbiot-move-page.php';
+require plugin_dir_path( __FILE__ ) . 'includes/btsbiot-sync-taxonomies-tags.php';
 /**
  * Begins execution of the plugin.
  *
