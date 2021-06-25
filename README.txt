@@ -1,79 +1,29 @@
-=== BTS BIOT by Mcfaith ===
-Contributors: mcfaith9
-Donate link: facebook.com/mcfaith
-Tags: multisite, custom, taxonomies
-Requires at least: 5.6
-Requires PHP: 7.4
-Tested up to: 5.7
-Stable tag: trunk
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+=== MC Multisite Distributor ===
+Contributors:      mcfaith9
+Tags:              content, distribution, syndication, management, multisite, custom, centralize taxonomies
+Requires at least: 4.7
+Tested up to:      5.7
+Requires PHP:      5.6
+Stable tag:        trunk
+License:           GPLv2 or later
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Sync basic needs for multisite installation.
+MC Multisite Distributor makes it easy to distribute and reuse content across your websites — whether in a single multisite or across the web.
 
 == Description ==
 
-Sync categories and taxonomies on multisite use same db_table instead of its own. Custom function like copy post/pages/woocommerce product from Site A to Site B. etc.
+**Features**
 
-== Installation ==
+* MC Multisite Distributor supports safe, SEO-friendly content reuse and sharing via "pushing" and "pulling".
+* While logged in and editing or viewing any single post (or custom post type) that can be distributed, a `MC Multisite Distributor` admin bar item will appear, that will facilitate sharing ("pushing") that content to any `connection`.
+* In the admin dashboard, a top level MC Multisite Distributor menu item links to the "pull" screen. Here, editors can share ("pull") content from any `connection` into the current site.
+* Content this is distributed (via Push or Pull) is connected to the original. Reposted content receives updates from the original, canonical source automatically.
 
-1. Upload the `bts-biot-by-mcfaith` folder to the `/wp-content/plugins/` directory.
-1. **Either** activate the plugin on each child site's Plugins panel, **or** activate it across the whole site using the Network Admin's Plugins panel.
-1. Edit pages and posts as you normally would.
+**Connections**
 
-e.g.
+There are two connection types: `internal` and `external`.
 
-1. Upload `btsbiot.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
-
-== Frequently Asked Questions ==
-
-= Why do I want this? =
-
-If you're using multisite to separate out parts of a website that still have some connection to each other,
-then you may want to use the same tags, categories and other taxonomies across them all.
-
-= Where is the data stored? =
-
-In the taxonomy tables for the *parent* site of the network.
-
-= Can I use this for some child sites and not others? =
-
-Yes. Activate the plugin on each child site that you wish to use it for.
-In this case, do not activate the plugin across the whole network.
-
-= Can I use this for some taxonomies and not others? =
-
-No, it's all or nothing.
-
-= Can I use this with my custom taxonomy? =
-
-Yes.
-
-= Is this compatible with other plugins that affect taxonomies? =
-
-In most cases, yes.
-
-== Changelog ==
-
-= 1.0 =
-* Added Global Taxonomies.
-
-== Upgrade Notice ==
-
-Will be added in the future
-
-== Screenshots ==
-
-1. Temporary Screenshots `/assets/34260281.png`
-
-Here's a link to [WordPress](https://github.com/mcfaith9/wp-plugin-btsbiot) and one to [Markdown's Syntax Documentation][markdown syntax].
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+* Internal connections are other sites inside of the same multisite network. Any user logged into the network can distribute any content in the network to any other sites in the network where that user has permission to publish posts (assuming the site supports the same post type).
+* External connections are external websites, connected by the JSON REST API. External connections can be added in the WordPress admin dashboard under `MC Multisite Distributor` > `External Connections`. Administrators can decide which user roles are allowed to distribute content to and from that connection (Editors and Administrators by default). All users with those roles will inherit the permissions of the user account used to establish the remote connection.
+* External connections require HTTP Basic Authentication or [WordPress.com OAuth2](https://developer.wordpress.com/docs/oauth2/) (must be on VIP) be set up on the remote website. For Basic Auth, we recommend the [Application Passwords](https://wordpress.org/plugins/application-passwords/) plugin.
+* For external connections, MC Multisite Distributor needs to be installed on BOTH sides of the connection.
