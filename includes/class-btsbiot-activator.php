@@ -18,7 +18,7 @@
  * @since      1.0.0
  * @package    Btsbiot
  * @subpackage Btsbiot/includes
- * @author     Mcfaith  <marclouie@aguyiknow.com.pp>
+ * @author     Mcfaith  <marclouie@aguyiknow.com.ph>
  */
 class Btsbiot_Activator {
 
