@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name:       MC Multisite Distributor
+ * Plugin Name:       MC Multisite Synchronize
  * Description:       This Plugins Dedicated for User Synchronization/Sync/Copy/Centralize Products, Post and Pages. Centralize Tags and TAXONOMIES. (Private Use Only Contains Specific Compilation Plugins)
- * Version:           1.0.9
+ * Version:           1.1.0
  * Author:            mcfaith9
  * Author URI:        https://github.com/mcfaith9
  * License:           GPLv2 or later
- * Text Domain:       MC Multisite Distributor
+ * Text Domain:       MC Multisite Synchronize
  * Domain Path:       /lang/
  * GitHub Plugin URI: https://github.com/mcfaith9/wp-plugin-btsbiot/tree/master
  *
- * @package MC Multisite Distributor
+ * @package MC Multisite Synchronize
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -110,20 +110,20 @@ require_once __DIR__ . '/includes/template-tags.php';
 require_once __DIR__ . '/includes/debug-info.php';
 
 // Load required core plugin files
-require_once __DIR__ .'/wpm-user-sync/core/wpmus-variables.php';
-require_once __DIR__ .'/wpm-user-sync/core/wpmus-functions.php';
+require_once __DIR__ .'/mcmultisite-user-sync/core/wpmus-variables.php';
+require_once __DIR__ .'/mcmultisite-user-sync/core/wpmus-functions.php';
 
 // Load required network-admin files
-require_once __DIR__ .'/wpm-user-sync/network-admin/wpmus-network-sections.php';
-require_once __DIR__ .'/wpm-user-sync/network-admin/wpmus-network-common.php';
-require_once __DIR__ .'/wpm-user-sync/network-admin/wpmus-network-home.php';
-require_once __DIR__ .'/wpm-user-sync/network-admin/wpmus-network-syncoptions.php';
-require_once __DIR__ .'/wpm-user-sync/network-admin/wpmus-network-syncactions.php';
+require_once __DIR__ .'/mcmultisite-user-sync/network-admin/wpmus-network-sections.php';
+require_once __DIR__ .'/mcmultisite-user-sync/network-admin/wpmus-network-common.php';
+require_once __DIR__ .'/mcmultisite-user-sync/network-admin/wpmus-network-home.php';
+require_once __DIR__ .'/mcmultisite-user-sync/network-admin/wpmus-network-syncoptions.php';
+require_once __DIR__ .'/mcmultisite-user-sync/network-admin/wpmus-network-syncactions.php';
 
 // Load required site-admin files
-require_once __DIR__ .'/wpm-user-sync/site-admin/wpmus-site-sections.php';
-require_once __DIR__ .'/wpm-user-sync/site-admin/wpmus-site-home.php';
-require_once __DIR__ .'/wpm-user-sync/site-admin/wpmus-site-syncactions.php';
+require_once __DIR__ .'/mcmultisite-user-sync/site-admin/wpmus-site-sections.php';
+require_once __DIR__ .'/mcmultisite-user-sync/site-admin/wpmus-site-home.php';
+require_once __DIR__ .'/mcmultisite-user-sync/site-admin/wpmus-site-syncactions.php';
 
 global $wpmus_newUserSync;
 global $wpmus_newSiteSync;

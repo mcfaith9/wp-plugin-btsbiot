@@ -48,12 +48,12 @@ function wpmus_network_home_welcome_content() {
         return;
     ?>
 
-    <h3><?php _e( 'Welcome to Network "WPM User Sync" Plugin', 'sd' ); ?></h3>
-    <p>Thank you for choosing WPM User Sync (which actually means "WordPress Multi-Site User Synchronization"). Thank you for choosing WPM User Sync (which actually means "WordPress Multi-Site User Synchronization"). Follow the next steps to getting start synchronizing:</p>
+    <h3><?php _e( 'Welcome to Network "MCMultisite User Sync" Plugin', 'sd' ); ?></h3>
+    <p>Thank you for choosing MCMultisite (which actually means "WordPress Multi-Site User Synchronization"). Thank you for choosing MCMultisite (which actually means "WordPress Multi-Site User Synchronization"). Follow the next steps to getting start synchronizing:</p>
 
     <a href="<?php echo network_admin_url( 'admin.php?page=wpmus-networkhome&tab=concepts' ); ?>" class="cuadrado">1. Review basic concepts</a>
     <a href="<?php echo network_admin_url( 'admin.php?page=wpmus-networksyncactions' ); ?>" class="cuadrado">2. Complete the initial Users Sync</a>
-    <a href="<?php echo network_admin_url( 'admin.php?page=wpmus-networksyncoptions' ); ?>" class="cuadrado">3. Check all WPM User Sync options</a>
+    <a href="<?php echo network_admin_url( 'admin.php?page=wpmus-networksyncoptions' ); ?>" class="cuadrado">3. Check all MCMultisite options</a>
     <a href="<?php echo network_admin_url( 'admin.php?page=wpmus-networkhome&tab=about' ); ?>" class="cuadrado">4. Meet the Authors & Support Us</a>
 
     <p>Do you want online help? Check our <a href="https://pablodiloreto.com/wpm-user-sync/">site</a>.</p>
@@ -69,10 +69,10 @@ function wpmus_network_home_concepts_content() {
     ?>
 
     <h3><?php _e( 'User Sync Concepts', 'sd' ); ?></h3>
-    <p>WPM User Sync has some simple but important concepts. Knowning all them will help you to get a better experience with the tool.</p>
+    <p>MCMultisite has some simple but important concepts. Knowning all them will help you to get a better experience with the tool.</p>
 
     <h4>What exactly does this plugin do?</h4>
-    <p>WPM User Sync is a plugin that enable the user synchronization in your Wordpress Multisite, that is a type of WordPress installation that allows you to create and manage a network of multiple websites from a single WordPress dashboard.</p>
+    <p>MCMultisite is a plugin that enable the user synchronization in your Wordpress Multisite, that is a type of WordPress installation that allows you to create and manage a network of multiple websites from a single WordPress dashboard.</p>
     <p>Key concepts:</p>
     <ul>
         <li>- WPM User sync is a plugin, not a core feature of WordPress. It was built by external developers to WordPress. However, it goes through a detailed testing process to ensure smooth operation as it interacts with core aspects of the CMS.</li>
@@ -82,7 +82,7 @@ function wpmus_network_home_concepts_content() {
     </ul>
 
     <h4>What is a trigger? Which ones exist here?</h4>
-    <p>In WPM User Sync you will can configure some triggers to automate user sync. A trigger is procedural code that is automatically executed in response to certain events, and in the particular case of WPM User Sync & WordPress, to one of the following events:</p>
+    <p>In MCMultisite you will can configure some triggers to automate user sync. A trigger is procedural code that is automatically executed in response to certain events, and in the particular case of MCMultisite & WordPress, to one of the following events:</p>
     <ul>
         <li>- <strong>New user creation</strong>: when an user register in your site, or an admin create a new one.</li>
         <li>- <strong>New site creation</strong>: when an admin or authorized user create a new site in your network.</li>
@@ -121,7 +121,7 @@ if ( 'about' != $sd_active_tab )
     return;
 ?>
 
-<h3><?php _e( 'About WPM User Sync Plugin', 'sd' ); ?></h3>
+<h3><?php _e( 'About MCMultisite Plugin', 'sd' ); ?></h3>
 <p>This plugin was developer by <strong>Pablo Ariel Di Loreto</strong>:</p>
 <ul>
     <li>- <a href="https://www.linkedin.com/in/pablodiloreto/" target="_blank">LinkedIn Contact</a>.</li>
