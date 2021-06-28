@@ -296,14 +296,46 @@ function settings_screen() {
 function network_settings_screen() {
 	$settings = Utils\get_network_settings();
 
-	$license_key = ( ! empty( $settings['license_key'] ) ) ? $settings['license_key'] : '';
-	$email       = ( ! empty( $settings['email'] ) ) ? $settings['email'] : '';
-	?>
+	$network_taxonomy = ( ! empty( $settings['network_taxonomy'] ) ) ? $settings['network_taxonomy'] : '';
+	?>	
 
 	<div class="wrap">
-		<h1><?php esc_html_e( 'MCMultisite Distributor Settings', 'distributor' ); ?></h1>
-	</div>
+		<h1><?php esc_html_e( 'MCMultisite Distributor Global Settings', 'distributor' ); ?></h1>
 
+		<form action="" method="post">
+		<?php settings_fields( 'dt-settings' ); ?>
+		<?php settings_errors(); ?>
+
+		<input type="hidden" name="dt_network_settings" value="1">
+
+		<table class="form-table">
+			<tbody>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Enable Multisite use one taxonomy db table.', 'distributor' ); ?></th>					
+				</tr>
+				<tr>
+					<td>
+						<ul class="media-handling">
+							<li>
+								<label><input <?php checked( $settings['network_taxonomy'], 'enable' ); ?> type="radio" value="enable" name="dt_settings[network_taxonomy]">
+								<?php esc_html_e( 'Enable (default).', 'distributor' ); ?>
+								</label>
+							</li>
+							<li>
+								<label><input <?php checked( $settings['network_taxonomy'], 'disable' ); ?> type="radio" value="disable" name="dt_settings[network_taxonomy]">
+								<?php esc_html_e( 'Disable', 'distributor' ); ?>
+								</label>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<?php submit_button(); ?>
+
+		</form>		
+	</div>	
 	<?php
 }
 
@@ -323,12 +355,18 @@ function handle_network_settings() {
 
 	$new_settings = Utils\get_network_settings();
 
-	if ( isset( $_POST['dt_settings']['license_key'] ) ) {
-		$new_settings['license_key'] = sanitize_text_field( $_POST['dt_settings']['license_key'] );
-	}
+	// if ( isset( $_POST['dt_settings']['license_key'] ) ) {
+	// 	$new_settings['license_key'] = sanitize_text_field( $_POST['dt_settings']['license_key'] );
+	// }
 
-	if ( isset( $_POST['dt_settings']['email'] ) ) {
-		$new_settings['email'] = sanitize_text_field( $_POST['dt_settings']['email'] );
+	// if ( isset( $_POST['dt_settings']['email'] ) ) {
+	// 	$new_settings['email'] = sanitize_text_field( $_POST['dt_settings']['email'] );
+	// }
+
+	if ( ! isset( $settings['network_taxonomy'] ) || ! in_array( $settings['network_taxonomy'], array( 'enable', 'disable' ), true ) ) {
+		$new_settings['network_taxonomy'] = 'enable';
+	} else {
+		$new_settings['network_taxonomy'] = sanitize_text_field( $settings['network_taxonomy'] );
 	}
 
 	if ( ! empty( $_POST['dt_settings']['email'] ) && ! empty( $_POST['dt_settings']['license_key'] ) ) {
