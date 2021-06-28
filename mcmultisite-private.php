@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       MC Multisite Distributor
- * Description:       This Plugins Dedicated for Sync/Copy/Centralize products, post and pages. Add Centralize Tags and TAXONOMIES. (Private Use Only Contains Specific Compilation Plugins)
+ * Description:       This Plugins Dedicated for User Synchronization/Sync/Copy/Centralize Products, Post and Pages. Centralize Tags and TAXONOMIES. (Private Use Only Contains Specific Compilation Plugins)
  * Version:           1.0.9
  * Author:            mcfaith9
  * Author URI:        https://github.com/mcfaith9
