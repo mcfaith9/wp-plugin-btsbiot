@@ -649,7 +649,7 @@ function screen_option() {
 function add_menu_item() {
 	$hook = add_menu_page(
 		'MCMultisite',
-		'MCMultisite',
+		'Distributor',
 		/**
 		 * Filter Distributor capabilities allowed to view external connections.
 		 *
